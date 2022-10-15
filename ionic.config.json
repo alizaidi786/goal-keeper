@@ -1,0 +1,8 @@
+{
+  "name": "GoalKeeper",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "4eeb21b0"
+}

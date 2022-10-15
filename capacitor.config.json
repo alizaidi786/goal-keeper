@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "GoalKeeper",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
