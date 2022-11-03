@@ -4,5 +4,4 @@
     <string name="title_activity_main">GoalKeeper</string>
     <string name="package_name">io.ionic.starter</string>
     <string name="custom_url_scheme">io.ionic.starter</string>
-    <string name="admob_app_id">ca-app-pub-1870200283695730~6069692787</string>
 </resources>

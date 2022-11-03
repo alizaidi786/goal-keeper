@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { HomeGuard } from './home.guard';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
+    canActivate:[HomeGuard]
   },
    {
     path: 'home',
@@ -30,7 +31,8 @@ const routes: Routes = [
   {
     path: 'money-manager-home',
     loadChildren: () => import('./money-manager/home/home.module').then( m => m.HomePageModule)
-  },  {
+  },
+  {
     path: 'category',
     loadChildren: () => import('./money-manager/category/category.module').then( m => m.CategoryPageModule)
   },
