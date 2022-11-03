@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button>
+     </ion-back-button>
+    </ion-buttons>
+    <ion-title>Spend Analysis</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-icon slot="end" name="reload-outline"></ion-icon>
+       <ion-card>
+        <ion-card-header>
+          Bar Chart
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #barChart></canvas>
+        </ion-card-content>
+       </ion-card>
+
+       <ion-card>
+        <ion-card-header>
+          Pie Chart
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #pieChart></canvas>
+        </ion-card-content>
+       </ion-card>
+
+       <ion-card>
+        <ion-card-header color="light">
+          Advice <ion-icon name="ear-outline"></ion-icon>
+        </ion-card-header>
+        <ion-card-content>
+          <p>You are spending high here.</p>
+         <ion-text>Try to save on <span style="color: blue;">{{highestSpendCat}}</span></ion-text>
+        </ion-card-content>
+       </ion-card>
+      
+</ion-content>

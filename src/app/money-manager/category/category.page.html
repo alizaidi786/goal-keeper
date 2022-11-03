@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button>
+     </ion-back-button>
+    </ion-buttons>
+    <ion-title>Spend Categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-list [inset]="true">
+    <ion-list-header>
+      <ion-label>Categories Available</ion-label>
+    </ion-list-header>
+    <div *ngFor="let category of categories">
+      <ion-item>
+        <ion-label>{{category}}</ion-label>
+        <ion-icon (click)="deleteCategory(category)" color="danger" name="trash-outline"></ion-icon>
+      </ion-item>
+    </div>
+  </ion-list>
+
+  <ion-fab-button (click)="presentAlert()"   color="primary" >
+    <ion-icon name="add-outline"></ion-icon>
+  </ion-fab-button>
+
+</ion-content>
+
+
+

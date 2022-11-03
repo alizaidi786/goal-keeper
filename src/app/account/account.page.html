@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title >Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item  lines="none">
+    <ion-card >
+      <div *ngIf="userData">
+        <h6>Name: </h6>
+        <p>{{userData.name}}</p>
+        <h6>Email: </h6>
+        <p>{{userData.email}}</p>
+        <h6>Mobile: </h6>
+        <p>{{userData.mobile}}</p>
+      </div>
+      <ion-button color="danger" (click)="logOut()" >Logout
+      </ion-button>
+    </ion-card>
+  </ion-item>
+  
+</ion-content>

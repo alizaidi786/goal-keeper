@@ -1,0 +1,40 @@
+<ion-content>
+
+  <div class="login">
+    <h1>
+      <ion-text color="light">Goal Keeper</ion-text>
+    </h1>
+    <ion-card>
+      <ion-card-content>
+        <form [formGroup]="registerForm" (ngSubmit)="onRegister(registerForm)">
+          <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input formControlName="name" autocomplete="false" placeholder="Enter name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input formControlName="email" autocomplete="false" placeholder="Enter email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Mobile</ion-label>
+            <ion-input formControlName="mobile" autocomplete="false" placeholder="Enter mobile"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input formControlName="password" autocomplete="false" placeholder="Enter password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Confirm Password</ion-label>
+            <ion-input formControlName="confpassword" autocomplete="false" placeholder="Enter password"></ion-input>
+          </ion-item>
+          <ion-button color="secondary" type="submit" expand="block">Register</ion-button>
+          <p>
+            <ion-text color="primary" routerLink="/login">Already Have An Account?</ion-text>
+          </p>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  
+  
+</ion-content>

@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Money Manager</ion-title>
+    <ion-icon slot="end" id="popover-button"  class="ion-padding" name="ellipsis-vertical-outline"></ion-icon>
+    <!-- <ion-icon  size="large" name="wallet-outline"></ion-icon> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-item lines="none" >
+    <ion-card class="main-card">
+      <ion-card-header>
+        <ion-row>
+          <ion-col>
+            <ion-card-subtitle>Balance</ion-card-subtitle>
+            <ion-card-title [ngClass]="{'redText': walletBalance < 0}">Rs {{walletBalance}}</ion-card-title>
+          </ion-col>
+          <ion-col>
+            <ion-button (click)="presentAlert()" color="primary">Add Amount</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-header>
+    </ion-card>
+   </ion-item>
+
+<ion-popover trigger="popover-button" [dismissOnSelect]="true">
+  <ng-template>
+    <ion-content>
+      <ion-list>
+        <ion-item [button]="true" routerLink="/spend-graphs" [detail]="false">Spend Analysis</ion-item>
+        <ion-item [button]="true" routerLink="/category" [detail]="false">Categories</ion-item>
+        <ion-item [button]="true" routerLink="/history" [detail]="false">History</ion-item>
+        <ion-item [button]="true" (click)="resetBalance()" [detail]="false">Reset Balance</ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>
+
+  <div class="ion-margin-horizontal ion-margin-vertical spend-button-div">
+    <ion-button (click)="updateCat()" id="open-modal" expand="block" color="danger">Add Spend</ion-button>
+  </div>
+ 
+  <ion-item lines="none" >
+    <ion-card class="main-card">
+      <ion-card-header class="spend-card-header">
+        <ion-card-subtitle>Last 5 Spend transactions</ion-card-subtitle>
+        <ion-text color="primary">See All</ion-text>
+      </ion-card-header>
+      <ion-card-content >
+        <ion-list [inset]="true">
+          <div *ngFor="let spendTrans of spendTransactions">
+               <ion-row>
+                <ion-col size="9">
+                  <p>{{spendTrans.category}}</p>
+                  <p><sub>{{spendTrans.description}}</sub></p>
+                  <p><sub>{{spendTrans.date | date : 'medium'}}</sub></p>
+                </ion-col>
+                <ion-col size="3">
+                  <ion-text color="danger">
+                    <p>Rs {{spendTrans.amount}}</p>
+                  </ion-text>
+                </ion-col>
+               </ion-row>
+          </div>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+   </ion-item>
+
+    
+   <ion-item lines="none" >
+    <ion-card class="main-card">
+      <ion-card-header class="spend-card-header">
+        <ion-card-subtitle>Last 5 Wallet transactions</ion-card-subtitle>
+        <ion-text color="primary">See All</ion-text>
+      </ion-card-header>
+      <ion-card-content >
+        <ion-list [inset]="true">
+          <div *ngFor="let walletTrans of walletTransactions">
+              <ion-label *ngIf="walletTrans.msg == 'add'" color="success">Rs {{walletTrans.amount}}</ion-label>
+              <ion-label *ngIf="walletTrans.msg == 'reset'" color="danger">Rs 0     -     Reset</ion-label>
+              <p><sub>{{walletTrans.date | date : 'medium'}}</sub></p>
+          </div>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+   </ion-item>
+
+   <ion-modal #modal trigger="open-modal">
+    <ng-template>
+      <ion-content>
+        <ion-toolbar>
+          <ion-title>Add Spend</ion-title>
+          <ion-buttons slot="end">
+            <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+
+        <form [formGroup]="spendForm" (ngSubmit)="onSubmit(spendForm)">
+          <ion-item>
+            <ion-label position="floating">Amount</ion-label>
+            <ion-input type="number" formControlName="amount" placeholder="Enter Amount"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Category</ion-label>
+                <ion-select  formControlName="category" interface="popover"  placeholder="Select Category">
+                  <div *ngFor="let cat of categories">
+                    <ion-select-option  value={{cat}}>{{cat}}</ion-select-option>
+                  </div>
+                </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Description</ion-label>
+            <ion-textarea formControlName="description" placeholder="Add more details for your spend" [autoGrow]="true"></ion-textarea>
+          </ion-item>
+          <ion-button color="secondary" type="submit" (click)="modal.dismiss()" expand="block">Submit</ion-button>
+        </form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  
+</ion-content>

@@ -30,8 +30,12 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
-            "scripts": [],
+            "styles": ["src/theme/variables.scss", "src/global.scss",
+            "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+            "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"],
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
             "aot": false,
             "vendorChunk": true,
             "extractLicenses": false,

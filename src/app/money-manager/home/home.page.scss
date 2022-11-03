@@ -1,0 +1,68 @@
+.main-card{
+    width: 100%;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.sub-cards{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+}
+.spend-card{
+    height: 400px;
+    width: 100%;
+    border-radius: 40px;
+    position: absolute;
+    bottom: 10px;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.spend-card-div{
+    display: flex;
+    justify-content: center;
+}
+
+.spend-card-header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.spend-card-header ion-text{
+  width: 20%;
+}
+.spend-card-header ion-card-subtitle{
+    width: 80%;
+}
+.main-card ion-list div{
+    border-bottom: 1px solid grey;
+}
+
+ion-modal {
+    --height: 50%;
+    --border-radius: 16px;
+    margin: 10px;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    padding-bottom: 0;
+  }
+  
+ion-modal::part(backdrop) {
+    background: rgba(209, 213, 219);
+    opacity: 1;
+  }
+  
+  ion-modal ion-toolbar {
+    --background: #3dc2ff;
+    --color: white;
+  }
+  ion-select{
+    width: 100%;
+  }
+  ion-modal ion-button{
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .red-text{
+    color: red !important;
+  }

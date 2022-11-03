@@ -1,0 +1,28 @@
+<ion-header color="secondary">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button>
+  </ion-back-button>
+    </ion-buttons>
+    <ion-title>View Task</ion-title>
+    <ion-button *ngIf="task.status == 'In-progress'" (click)="finishTask()" slot="end" shape="round" color="primary" size="medium">Finish Task</ion-button>
+    <ion-button *ngIf="task.status == 'New' && checkStartDate(task.startDate)" (click)="startTask()" slot="end" shape="round" color="primary" size="medium">Start Task</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="task">
+    <ion-card-content>
+      <ion-text color="primary">
+        <h2>{{task.title | titlecase}}</h2>
+      </ion-text>
+        <p><span class="text-bold">Status: </span> <span >{{task.status}}</span></p>
+        <p><span class="text-bold">Basic Start Date: </span> <span>{{task.startDate | date: 'dd-MMM-yyyy'}}</span></p>
+        <p><span class="text-bold">Basic End Date: </span> <span>{{task.endDate | date: 'dd-MMM-yyyy'}}</span></p>
+        <p><span class="text-bold">Actual Start Date: </span> <span>{{task.actualStartDate | date: 'dd-MMM-yyyy' || 'Yet to be started'}}</span></p>
+        <p><span class="text-bold">Actual End Date: </span> <span>{{task.actualFinishDate | date: 'dd-MMM-yyyy' || 'Yet to finish'}}</span></p>
+        <p><span class="text-bold">Description: </span></p>
+        <p>{{task.description}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

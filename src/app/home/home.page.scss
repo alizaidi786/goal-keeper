@@ -1,0 +1,38 @@
+.qoute-card{
+    // background:linear-gradient(135deg, #0FF0B3 0%,#036ED9 100%);
+    font-weight: bold;
+    position: relative;
+}
+.author-text{
+    float: right;
+    font-style: italic;
+}
+.copy-icon{
+    position: absolute;
+    z-index: 1;
+    top: 3px;
+    right: 3px;
+}
+.task-cards ion-card{
+   height: 100px;
+   background: #0F2027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: white;
+font-family: Arial, Helvetica, sans-serif;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+h1{
+    font-size: 45px;
+}
+.loader-card{
+    height: 150px;
+}
+ion-skeleton-text{
+    width: 710%;
+    margin: 10px;
+    border-radius: 10px;
+}

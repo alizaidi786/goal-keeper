@@ -1,0 +1,45 @@
+.login{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: darkblue;
+    // background-image: radial-gradient(circle, #0368ff, #0058fc, #0147f8, #1a33f2, #2d12eb);
+}
+ion-card{
+    width: 90%;
+}
+ion-card p{
+    float: right;
+    margin: 10px 0;
+}
+ion-button{
+    margin-top: 20px;
+}
+
+.bottom{
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+.bottom p{
+    margin: 0 !important;
+    color: white;
+    font-family:sans-serif;
+}
+.bottom p:first-child{
+  font-size: small;
+}
+.bottom p:last-child{
+    font-size: medium;
+    background-color: blue;
+    border-radius: 10px;
+    padding: 0 10px;
+  }
+
+  ion-spinner{
+    position: absolute;
+    z-index: 10;
+  }

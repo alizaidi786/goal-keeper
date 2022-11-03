@@ -1,0 +1,25 @@
+ion-select{
+    background-color: white;
+    color: black;
+}
+
+ion-card{
+    width: 100%;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+ion-fab-button{
+  position: fixed;
+  z-index: 10;
+  bottom: 10px;
+  right: 10px;
+//   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+ion-fab-button ion-icon{
+  color: white !important;
+  font-weight: bold !important;
+}
+
+ion-footer{
+  background-color: #3dc2ff;
+}

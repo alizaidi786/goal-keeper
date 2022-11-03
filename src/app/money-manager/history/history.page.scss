@@ -1,0 +1,19 @@
+.main-card{
+    width: 100%;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.spend-card-header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.spend-card-header ion-text{
+  width: 20%;
+}
+.spend-card-header ion-card-subtitle{
+    width: 80%;
+}
+.main-card ion-list div{
+    border-bottom: 1px solid grey;
+}

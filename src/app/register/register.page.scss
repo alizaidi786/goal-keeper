@@ -1,0 +1,22 @@
+.login{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: darkblue;
+    // background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    // background-image: linear-gradient(to right top, #052d37, #00435f, #00598e, #006cbe, #127ceb);
+    // background-image: radial-gradient(circle, #285aa5, #608ee4, #547adb, #414fb6, #463b9c);
+}
+ion-card{
+    width: 90%;
+}
+ion-card p{
+    float: right;
+    margin: 10px 0;
+}
+ion-button{
+    margin-top: 20px;
+}

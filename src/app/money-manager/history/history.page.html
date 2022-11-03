@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button>
+     </ion-back-button>
+    </ion-buttons>
+    <ion-title>Spend History</ion-title>
+    <ion-icon slot="end" id="popover-button"  class="ion-padding" name="ellipsis-vertical-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-popover trigger="popover-button" [dismissOnSelect]="true">
+    <ng-template>
+      <ion-content>
+        <ion-list>
+          <ion-item [button]="true" (click)="showSpend()" [detail]="false">Spend History</ion-item>
+          <ion-item [button]="true" (click)="showWallet()" [detail]="false">Wallet History</ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-popover>
+
+  <ion-item *ngIf="showSpendHistory"  lines="none" >
+    <ion-card class="main-card">
+      <ion-card-header class="spend-card-header">
+        <ion-card-subtitle>All Spend transactions</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content >
+        <ion-list [inset]="true">
+          <div *ngFor="let spendTrans of spendTransactions">
+               <ion-row>
+                <ion-col size="9">
+                  <p>{{spendTrans.category}}</p>
+                  <p><sub>{{spendTrans.description}}</sub></p>
+                  <p><sub>{{spendTrans.date | date : 'medium'}}</sub></p>
+                </ion-col>
+                <ion-col size="3">
+                  <ion-text color="danger">
+                    <p>Rs {{spendTrans.amount}}</p>
+                  </ion-text>
+                </ion-col>
+               </ion-row>
+          </div>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+   </ion-item>
+
+   <ion-item *ngIf="!showSpendHistory" lines="none" >
+    <ion-card class="main-card">
+      <ion-card-header class="spend-card-header">
+        <ion-card-subtitle>All wallet transactions</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content >
+        <ion-list [inset]="true">
+          <div *ngFor="let walletTrans of walletTransactions">
+              <ion-label *ngIf="walletTrans.msg == 'add'" color="success">Rs {{walletTrans.amount}}</ion-label>
+              <ion-label *ngIf="walletTrans.msg == 'reset'" color="danger">Rs 0     -     Reset</ion-label>
+              <p><sub>{{walletTrans.date | date : 'medium'}}</sub></p>
+          </div>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+   </ion-item>
+
+</ion-content>

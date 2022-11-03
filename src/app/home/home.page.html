@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title slot="end"><ion-icon  name="home-outline"></ion-icon></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div >
+    <ion-card *ngIf="qouteObj" class="ion-padding qoute-card">
+      <div >
+        <ion-text  >
+          <p>{{qouteObj.quote}}</p>
+          <ion-icon (click)="copyQoute()" class="copy-icon" name="copy-outline"></ion-icon>
+        </ion-text>
+        <p class="author-text">-{{qouteObj.person}}</p>
+      </div>
+    </ion-card>
+
+    <ion-thumbnail *ngIf="!qouteObj" class="loader-card">
+      <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+    </ion-thumbnail>
+
+  </div>
+
+  <ion-row class="task-cards">
+    <ion-col routerLink="/tasks-home">
+      <ion-card >
+        <h1 id="tasksCount">
+        </h1>
+        <div>
+          New Tasks
+        </div>
+    </ion-card>
+    </ion-col>
+    
+       <ion-col>
+        <ion-card>
+          Zaidi
+        </ion-card>
+       </ion-col>
+  </ion-row>
+  
+</ion-content>

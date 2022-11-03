@@ -12,6 +12,9 @@
 /* Core CSS required for Ionic components to work properly */
 @import "~@ionic/angular/css/core.css";
 
+@import "../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css";
+@import  "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 /* Basic CSS for apps built with Ionic */
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
@@ -24,3 +27,31 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.new-task{
+    background-color: coral !important;
+    color: white !important;
+    padding: 4px 10px;
+    /* border-radius: 10px; */
+}
+.inprogress-task{
+    background-color: rgb(255, 230, 0) !important;
+    // padding: 4px 10px;
+    /* border-radius: 10px; */
+}
+.completed-task{
+    background-color: green !important;
+    color: white !important;
+    padding: 4px 10px;
+    /* border-radius: 10px; */
+}
+
+.new-shadow{
+    box-shadow: coral 0px 3px 8px !important;
+}
+.progress-shadow{
+    box-shadow: rgb(255, 230, 0) 0px 3px 8px !important;
+}
+.completed-shadow{
+    box-shadow: green 0px 3px 8px !important;
+}
